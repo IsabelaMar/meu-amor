@@ -20,13 +20,29 @@
 
   <div id="coracoes"></div>
 
-  <h3>✨ Us (in another universe.) ✨</h3>
+  <h2 class="titulo-idols">Nossas Ídols GL 💕</h2>
 
-<div class="carrossel">
-  <div class="card"><img src="/static/idols/lenamiu.jpg"></div>
-  <div class="card"><img src="/static/idols/freenbecky.jpg"></div>
-  <div class="card"><img src="/static/idols/englot.jpg"></div>
+<div class="carousel">
+    <button class="prev">❮</button>
+
+    <div class="carousel-track">
+        <div class="card">
+            <img src="{{ url_for('static', filename='idols/lenamiu.jpg') }}">
+        </div>
+        <div class="card">
+            <img src="{{ url_for('static', filename='idols/freenbecky.jpg') }}">
+        </div>
+        <div class="card">
+            <img src="{{ url_for('static', filename='idols/enlot.jpg') }}">
+        </div>
+    </div>
+
+    <button class="next">❯</button>
 </div>
+
+<script>
+alert("JS do love.html carregou");
+</script>
 
 </body>
 </html>
