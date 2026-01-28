@@ -12,13 +12,21 @@
 </head>
 <body class="love">
 
-  <img src="/static/nossafoto.jpeg" class="foto">
+  <img src="{{url_for('static', filename='nossafoto.jpeg') }}" class="foto">
 
   <h2>Eu te amo há:</h2>
 
   <p id="contador"></p>
 
   <div id="coracoes"></div>
+
+  <h3>✨ Us (in another universe.) ✨</h3>
+
+<div class="carrossel">
+  <div class="card"><img src="/static/idols/lenamiu.jpg"></div>
+  <div class="card"><img src="/static/idols/freenbecky.jpg"></div>
+  <div class="card"><img src="/static/idols/englot.jpg"></div>
+</div>
 
 </body>
 </html>
