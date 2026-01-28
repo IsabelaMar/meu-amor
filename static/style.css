@@ -55,14 +55,19 @@ button {
   }
 }
 
-.carousel {
+.carousel-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    overflow: hidden;
-    margin: 30px auto;
+    width: 100%;
     max-width: 90%;
+    margin: 20px auto;
+}
+
+.carousel {
+    overflow: hidden;
+    flex: 0 1 260px;  /* garante espaço no mobile */
 }
 
 .carousel-track {
@@ -71,9 +76,8 @@ button {
 }
 
 .card {
-    flex: 0 0 auto; /* mantém tamanho do conteúdo */
-    width: 200px;   /* largura base */
-    height: 260px;  /* altura base */
+    flex: 0 0 260px;
+    height: 260px;
     margin: 0 5px;
     background: #ffe6f2;
     border-radius: 20px;
@@ -86,7 +90,7 @@ button {
 .card img {
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain; /* mantém proporção */
+    object-fit: contain;
     border-radius: 20px;
 }
 

@@ -23,17 +23,20 @@
 
   <h2 class="titulo-idols">✨ Us (In another universe.) ✨</h2>
 
- <div class="carousel">
+ <div class="carousel-wrapper">
     <button class="prev" onclick="prevSlide()">❮</button>
 
-    <div class="carousel-track">
-        <div class="card"><img src="{{ url_for('static', filename='idols/lenamiu.jpg') }}"></div>
-        <div class="card"><img src="{{ url_for('static', filename='idols/freenbecky.jpg') }}"></div>
-        <div class="card"><img src="{{ url_for('static', filename='idols/enlot.jpg') }}"></div>
+    <div class="carousel">
+        <div class="carousel-track">
+            <div class="card"><img src="{{ url_for('static', filename='idols/lenamiu.jpg') }}"></div>
+            <div class="card"><img src="{{ url_for('static', filename='idols/freenbecky.jpg') }}"></div>
+            <div class="card"><img src="{{ url_for('static', filename='idols/enlot.jpg') }}"></div>
+        </div>
     </div>
 
     <button class="next" onclick="nextSlide()">❯</button>
 </div>
+
 
 
   <script>

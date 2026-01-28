@@ -35,28 +35,39 @@ function criarCoracao() {
 
 setInterval(criarCoracao, 500);
 
-let currentIndex = 0;
-
-function updateCarousel() {
+document.addEventListener("DOMContentLoaded", function () {
     const track = document.querySelector(".carousel-track");
-    const card = document.querySelector(".card");
-    if (!track || !card) return;
+    const cards = document.querySelectorAll(".card");
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".next");
+    let index = 0;
 
-    const width = card.getBoundingClientRect().width + 10; // +gap
-    track.style.transform = `translateX(${-currentIndex * width}px)`;
-}
-
-function nextSlide() {
-    const total = document.querySelectorAll(".card").length;
-    if (currentIndex < total - 1) {
-        currentIndex++;
-        updateCarousel();
+    function updateCarousel() {
+        const cardWidth = cards[0].getBoundingClientRect().width + 10; // +gap
+        track.style.transform = `translateX(${-index * cardWidth}px)`;
     }
-}
 
-function prevSlide() {
-    if (currentIndex > 0) {
-        currentIndex--;
+    nextBtn.addEventListener("click", function() {
+        if (index < cards.length - 1) {
+            index++;
+            updateCarousel();
+        }
+    });
+
+    prevBtn.addEventListener("click", function() {
+        if (index > 0) {
+            index--;
+            updateCarousel();
+        }
+    });
+
+    // Swipe para mobile
+    let startX = 0;
+    track.addEventListener("touchstart", (e) => startX = e.touches[0].clientX);
+    track.addEventListener("touchend", (e) => {
+        let endX = e.changedTouches[0].clientX;
+        if (startX - endX > 50 && index < cards.length - 1) index++;
+        if (endX - startX > 50 && index > 0) index--;
         updateCarousel();
-    }
-}
+    });
+});
