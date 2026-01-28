@@ -24,8 +24,9 @@
   <h2 class="titulo-idols">✨ Us (In another universe.) ✨</h2>
 
   <div class="carousel">
-    <button class="prev" onclick="prevSlide()">❮</button>
-
+     <button class="prev" onclick="prevSlide()">❮</button>
+     <button class="next" onclick="nextSlide()">❯</button>
+     
     <div class="carousel-track">
         <div class="card">
             <img src="{{ url_for('static', filename='idols/lenamiu.jpg') }}">
@@ -38,7 +39,6 @@
         </div>
     </div>
 
-    <button class="next" onclick="nextSlide()">❯</button>
 </div>
 
   <script>
