@@ -42,7 +42,7 @@ function updateCarousel() {
     const card = document.querySelector(".card");
     if (!track || !card) return;
 
-    const width = card.getBoundingClientRect().width;
+    const width = card.getBoundingClientRect().width + 10; // +gap
     track.style.transform = `translateX(${-currentIndex * width}px)`;
 }
 
@@ -60,4 +60,3 @@ function prevSlide() {
         updateCarousel();
     }
 }
-
