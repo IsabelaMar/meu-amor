@@ -4,49 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/static/style.css">
+  <script>
     const dataInicio = new Date("{{ data_inicio }}");
+  </script>
+  <script src="/static/script.js" defer></script>
   <title>💞 Eu te amo</title>
 </head>
-  <body class="love">
+<body class="love">
 
-    <img src="{{url_for('static', filename='nossafoto.jpeg') }}" class="foto">
+  <img src="/static/foto.jpg" class="foto">
 
-    <h2>Eu te amo há:</h2>
+  <h2>Eu te amo há:</h2>
 
-    <p id="contador"></p>
+  <p id="contador"></p>
 
-    <div id="coracoes"></div>
+  <div id="coracoes"></div>
 
-<<<<<<< HEAD
-    <h2 class="titulo-idols">✨ Us (in another universe.) ✨</h2>
-
-  <div class="carousel">
-      <button class="prev" onclick="prevSlide()">❮</button>
-
-      <div id="carousel-track" class="carousel-track">
-          <div class="card">
-              <img src="{{ url_for('static', filename='idols/lenamiu.jpg') }}">
-          </div>
-          <div class="card">
-              <img src="{{ url_for('static', filename='idols/freenbecky.jpg') }}">
-          </div>
-          <div class="card">
-              <img src="{{ url_for('static', filename='idols/enlot.jpg') }}">
-          </div>
-      </div>
-
-        <button class="next" onclick="nextSlide()">❯</button>
-    </div>
-
-      <script src="{{ url_for('static', filename='script.js') }}" defer ></script>
-      
-    <script>
-    alert("JS do love.html carregou");
-    </script>
-
-  </body>
-=======
-  <h3>✨ Us (in another universe.) ✨</h3>
+  <h3>✨ Us (In another universe.) ✨</h3>
 
 <div class="carrossel">
   <div class="card"><img src="/static/idols/lenamiu.jpg"></div>
@@ -54,6 +28,7 @@
   <div class="card"><img src="/static/idols/englot.jpg"></div>
 </div>
 
+
+
 </body>
->>>>>>> parent of 5e74937 (teste js love)
 </html>
