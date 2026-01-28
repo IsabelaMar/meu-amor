@@ -35,3 +35,29 @@ function criarCoracao() {
 
 setInterval(criarCoracao, 500);
 
+let currentIndex = 0;
+
+function updateCarousel() {
+    const track = document.querySelector(".carousel-track");
+    const card = document.querySelector(".card");
+    if (!track || !card) return;
+
+    const width = card.offsetWidth;
+    track.style.transform = `translateX(${-currentIndex * width}px)`;
+}
+
+function nextSlide() {
+    const total = document.querySelectorAll(".card").length;
+    if (currentIndex < total - 1) {
+        currentIndex++;
+        updateCarousel();
+    }
+}
+
+function prevSlide() {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+    }
+}
+
