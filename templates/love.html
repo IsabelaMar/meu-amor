@@ -7,37 +7,41 @@
     const dataInicio = new Date("{{ data_inicio }}");
   <title>💞 Eu te amo</title>
 </head>
-<body class="love">
+  <body class="love">
 
-  <img src="{{url_for('static', filename='nossafoto.jpeg') }}" class="foto">
+    <img src="{{url_for('static', filename='nossafoto.jpeg') }}" class="foto">
 
-  <h2>Eu te amo há:</h2>
+    <h2>Eu te amo há:</h2>
 
-  <p id="contador"></p>
+    <p id="contador"></p>
 
-  <div id="coracoes"></div>
+    <div id="coracoes"></div>
 
-  <h2 class="titulo-idols">✨ Us (in another universe.) ✨</h2>
+    <h2 class="titulo-idols">✨ Us (in another universe.) ✨</h2>
 
-<div class="carousel">
-    <button class="prev">❮</button>
+  <div class="carousel">
+      <button class="prev" onclick="prevSlide()">❮</button>
 
-    <div class="carousel-track">
-        <div class="card">
-            <img src="{{ url_for('static', filename='idols/lenamiu.jpg') }}">
-        </div>
-        <div class="card">
-            <img src="{{ url_for('static', filename='idols/freenbecky.jpg') }}">
-        </div>
-        <div class="card">
-            <img src="{{ url_for('static', filename='idols/enlot.jpg') }}">
-        </div>
+      <div id="carousel-track" class="carousel-track">
+          <div class="card">
+              <img src="{{ url_for('static', filename='idols/lenamiu.jpg') }}">
+          </div>
+          <div class="card">
+              <img src="{{ url_for('static', filename='idols/freenbecky.jpg') }}">
+          </div>
+          <div class="card">
+              <img src="{{ url_for('static', filename='idols/enlot.jpg') }}">
+          </div>
+      </div>
+
+        <button class="next" onclick="nextSlide()">❯</button>
     </div>
 
-      <button class="next">❯</button>
-    </div>
-
-    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+      <script src="{{ url_for('static', filename='script.js') }}" defer ></script>
+      
+    <script>
+    alert("JS do love.html carregou");
+    </script>
 
   </body>
 </html>
