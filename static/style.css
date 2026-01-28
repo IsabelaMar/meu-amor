@@ -94,6 +94,7 @@ button {
 }
 
 .carousel-track {
+    transition: transform 0.4s ease;
     display: flex;
     overflow: hidden;
     width: 260px;

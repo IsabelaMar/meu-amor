@@ -24,37 +24,45 @@
   <h2 class="titulo-idols">✨ Us (In another universe.) ✨</h2>
 
   <div class="carousel">
-      <button class="prev">❮</button>
+    <button class="prev">❮</button>
 
-      <div class="carousel-track">
-          <div class="card">
-              <img src="{{ url_for('static', filename='idols/lenamiu.jpg') }}">
-          </div>
-          <div class="card">
-              <img src="{{ url_for('static', filename='idols/freenbecky.jpg') }}">
-          </div>
-          <div class="card">
-              <img src="{{ url_for('static', filename='idols/englot.jpg') }}">
-          </div>
-      </div>
+    <div class="carousel-track">
+        <div class="card">
+            <img src="{{ url_for('static', filename='idols/idol1.jpg') }}">
+        </div>
+        <div class="card">
+            <img src="{{ url_for('static', filename='idols/idol2.jpg') }}">
+        </div>
+        <div class="card">
+            <img src="{{ url_for('static', filename='idols/idol3.jpg') }}">
+        </div>
+    </div>
 
-      <button class="next">❯</button>
-  </div>
+    <button class="next">❯</button>
+</div>
 
   <script>
-let index = 0;
-const track = document.querySelector('.carousel-track');
-const cards = document.querySelectorAll('.card');
+document.addEventListener("DOMContentLoaded", function () {
 
-document.querySelector('.next').onclick = () => {
-    index = (index + 1) % cards.length;
-    track.style.transform = `translateX(${-index * 260}px)`;
-};
+    let index = 0;
+    const track = document.querySelector(".carousel-track");
+    const cards = document.querySelectorAll(".card");
+    const nextBtn = document.querySelector(".next");
+    const prevBtn = document.querySelector(".prev");
 
-document.querySelector('.prev').onclick = () => {
-    index = (index - 1 + cards.length) % cards.length;
-    track.style.transform = `translateX(${-index * 260}px)`;
-};
+    if (!track || cards.length === 0) return;
+
+    nextBtn.addEventListener("click", () => {
+        index = (index + 1) % cards.length;
+        track.style.transform = `translateX(${-index * 260}px)`;
+    });
+
+    prevBtn.addEventListener("click", () => {
+        index = (index - 1 + cards.length) % cards.length;
+        track.style.transform = `translateX(${-index * 260}px)`;
+    });
+
+});
 </script>
 
 </body>
