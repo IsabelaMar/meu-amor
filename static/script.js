@@ -34,3 +34,4 @@ function criarCoracao() {
 }
 
 setInterval(criarCoracao, 500);
+
